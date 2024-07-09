@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imgQuickQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/health"
+        android:src="@drawable/health"
+        android:background="@drawable/icon_quick_quote"
+        android:padding="9dp"
+        android:layout_margin="10dp"
+        android:scaleType="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="7dp"
+        />
+
+    <TextView
+        android:id="@+id/txtQuick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/health"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgQuickQuote"
+        app:layout_constraintStart_toStartOf="@+id/imgQuickQuote"
+        app:layout_constraintTop_toBottomOf="@+id/imgQuickQuote"
+        android:textAlignment="center"
+        app:autoSizeMaxTextSize="12sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="2sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

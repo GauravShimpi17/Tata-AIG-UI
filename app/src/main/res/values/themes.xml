@@ -1,0 +1,84 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Practice" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/font_res</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="headline_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="business_summary">
+        <item name="android:textColor">#071e54</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+
+    <style name="business_count">
+        <item name="android:textColor">@color/dark_blue_color</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+
+    <style name="txt_linear_progress">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+
+    <style name="eligibility">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="drawableStartCompat">@drawable/not_eligible</item>
+    </style>
+
+    <style name="target_count">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+
+    <style name="quarterly">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+    </style>
+
+    <!-- Theme for the entire application -->
+    <style name="Theme.Practice" parent="Base.Theme.Practice" />
+
+    <!-- Theme with no action bar -->
+    <style name="Theme.Practice.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Action bar overlay -->
+    <style name="Theme.Practice.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Popup overlay -->
+    <style name="Theme.Practice.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Style for the action bar -->
+    <style name="CustomActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Practice.NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Practice.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Practice.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

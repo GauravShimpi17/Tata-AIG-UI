@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/card_color"
+    android:layout_margin="10dp"
+    android:paddingStart="10dp"
+    android:elevation="10dp"
+    >
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textColor="@color/sky_blue"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/copyThreeLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copy upto three \nlines will come \nhere"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/productName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:layout_marginStart="5dp"
+        android:textSize="18sp"
+        android:textFontWeight="600"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/copySubtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsem upto 2 \nlines"
+        app:layout_constraintTop_toBottomOf="@id/copyThreeLine"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/posterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintTop_toBottomOf="@id/copySubtext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingHorizontal="30dp"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/posterBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="productName, posterButton">
+
+    </androidx.constraintlayout.widget.Barrier>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_famliy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterBarrier"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
