@@ -5,20 +5,8 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
-
-<com.google.android.material.navigation.NavigationView
-    android:id="@+id/nav_view_home"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:background="@color/default_background_color"
-    android:fitsSystemWindows="true"
-    app:drawerLayoutCornerSize="0dp"
-    app:menu="@menu/nav_drawer"
-    app:headerLayout="@layout/navigation_header"/>
+    tools:context=".MainActivity"
+    >
 
 
     <ScrollView
@@ -26,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f7f7f7"
-        android:scrollbars="none"
-        >
+        android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -58,7 +45,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toStartOf="@+id/quickAction2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/headlineMain" />
+                app:layout_constraintTop_toBottomOf="@id/headlineMain"
+                />
             <!--        android:layout_marginStart="5dp"-->
 
             <include
@@ -79,13 +67,20 @@
                 app:layout_constraintStart_toEndOf="@+id/quickAction2"
                 app:layout_constraintTop_toBottomOf="@id/headlineMain" />
 
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/actBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="quickAction1 ,quickAction2, quickAction3"/>
+
             <include
                 android:id="@+id/headlineBusinessSummary"
                 layout="@layout/layout_headline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quickAction1" />
+                app:layout_constraintTop_toBottomOf="@+id/actBarrier" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardBusinessSummary"
@@ -191,7 +186,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toStartOf="@+id/quickQuote4"
-
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/quickQuote2"
                 app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
@@ -219,8 +213,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp">
+                    android:layout_height="wrap_content">
 
                     <include
                         android:id="@+id/poster1"
@@ -237,6 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/poster1" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -263,7 +257,7 @@
                 style="@style/headline_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CAMPAIGNS"
+                android:text="@string/campaigns"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardGiantSteps" />
@@ -340,4 +334,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/commLines" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_home"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/default_background_color"
+        app:drawerLayoutCornerSize="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/navigation_header" />
+
+            <ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"
+                android:groupIndicator="@null"
+                android:paddingVertical="10dp"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

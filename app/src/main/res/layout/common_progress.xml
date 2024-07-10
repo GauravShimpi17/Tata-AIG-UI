@@ -18,26 +18,26 @@
             style="@style/quarterly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quarterly"
+            android:text="@string/quarterly"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtYear"
             style="@style/quarterly"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="02 May - 02 Aug'24"
+            android:text="@string/_02_may_02_aug_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/quarterly" />
         <!--        android:textSize="16sp"-->
 
         <TextView
             android:id="@+id/txtTillDate"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="As on 12 Jun'24"
+            android:text="@string/as_on_12_jun_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--        android:textSize="16sp"-->
@@ -46,7 +46,7 @@
             android:id="@+id/dashedLine"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/dashed_line"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,139 +57,157 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/middlePart"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashedLine">
 
             <TextView
                 android:id="@+id/progressHeadline"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="10dp"
-                android:text="Comm. Lines Quarterly \n Campaign"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:textSize="22sp"
+                android:text="@string/comm_lines_quarterly_campaign"
                 android:textColor="#071e54"
                 android:textFontWeight="600"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="p" />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/txtPremiumLabel"
-                android:layout_width="wrap_content"
+                android:id="@+id/cirProgress"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:paddingStart="5dp"
-                app:layout_constraintEnd_toStartOf="@+id/progressWithImage"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/progressHeadline">
 
-                <TextView
-                    android:id="@+id/txtTarget"
-                    style="@style/txt_linear_progress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Target Premium"
-                    android:textColor="#000000"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--    android:layout_marginStart="16dp"-->
-                <TextView
-                    android:id="@+id/txtTargetPremium"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="₹1.1Cr"
-                    android:textColor="#002366"
-                    android:textFontWeight="600"
-                    android:textSize="34sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/txtTarget"
-                    app:layout_constraintTop_toBottomOf="@id/txtTarget" />
-                <!--    android:layout_marginStart="16dp"-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <FrameLayout
-                android:id="@+id/progressWithImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/premiumLabel"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/txtPremiumLabel"
-                app:layout_constraintTop_toBottomOf="@id/progressHeadline">
-
-                <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/circularProgressIndicator"
+                <LinearLayout
+                    android:id="@+id/txtPremiumLabel"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:progress="25"
-                    app:indicatorColor="#4CAF50"
-                    app:indicatorSize="85dp"
-                    app:trackColor="#dadde5"
-                    app:trackThickness="6dp" />
-
-                <ImageView
-                    android:id="@+id/centerImage"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/comm_lines2" />
-
-            </FrameLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/premiumLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/progressWithImage"
-                app:layout_constraintTop_toBottomOf="@id/progressHeadline">
-
-                <TextView
-                    android:id="@+id/txtEarned"
-                    style="@style/txt_linear_progress"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Earned Premium"
-                    android:textColor="#000000"
+                    android:orientation="vertical"
+                    android:paddingStart="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/progressWithImage"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <!--    android:layout_marginEnd="16dp"-->
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/txtearnedPremiumValue"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txtTarget"
+                        style="@style/txt_linear_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/slab_target_wtd_gwp"
+                        android:textColor="#000000" />
+                    <!--    android:layout_marginStart="16dp"-->
+                    <TextView
+                        android:id="@+id/txtTargetPremium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_75k"
+                        android:textColor="#002366"
+                        android:textFontWeight="600"
+                        android:textSize="30sp"
+                        tools:targetApi="p" />
+                    <!--    android:layout_marginStart="16dp"-->
+                </LinearLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/progressWithImage"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="₹12.5L"
-                    android:textColor="#4CAF50"
-                    android:textFontWeight="600"
-                    android:textSize="34sp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/premiumLabel"
+                    app:layout_constraintHorizontal_bias="0.5"
+
+                    app:layout_constraintStart_toEndOf="@+id/txtPremiumLabel"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="25"
+                        app:indicatorColor="#4CAF50"
+                        app:indicatorSize="80dp"
+                        app:trackColor="#dadde5"
+                        app:trackThickness="6dp">
+
+
+                    </com.google.android.material.progressindicator.CircularProgressIndicator>
+
+                    <ImageView
+                        android:id="@+id/centerImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/centreimage"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/comm_lines2" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/premiumLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/txtEarned"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEarned" />
-                <!--    android:layout_marginEnd="16dp"-->
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/progressWithImage"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!--    android:layout_marginEnd="16dp"-->
+
+                    <TextView
+                        android:id="@+id/txtEarned"
+                        style="@style/txt_linear_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/achieved_wtd_gwp"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/txtearnedPremiumValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_20_5k"
+                        android:textColor="#4CAF50"
+                        android:textFontWeight="600"
+                        android:textSize="30sp"
+                        tools:targetApi="p" />
+                    <!--    android:layout_marginEnd="16dp"-->
+                </LinearLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clubGold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressWithImage">
+                app:layout_constraintTop_toBottomOf="@+id/cirProgress">
 
                 <TextView
                     android:id="@+id/club"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Club"
+                    android:text="@string/club"
                     app:drawableEndCompat="@drawable/gold_bars_shiny_svgrepo_com"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/gold"
@@ -202,14 +220,15 @@
                     android:id="@+id/gold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gold"
+                    android:text="@string/gold"
                     android:textColor="#323338"
                     android:textFontWeight="500"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/club"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="p" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -224,7 +243,6 @@
             android:background="@drawable/dashed_line"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/middlePart" />
 
         <TextView
@@ -233,7 +251,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:text="Not Eligible"
+            android:text="@string/eligible"
             app:layout_constraintBottom_toBottomOf="@+id/dashedLine2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -241,7 +259,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -252,7 +270,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
-                android:text="Upcoming Slab Target (Wtd. GWP)"
+                android:text="@string/upcoming_slab_target_wtd_gwp"
                 app:drawableEndCompat="@drawable/info"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -262,20 +280,21 @@
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="₹25L"
+                android:text="@string/_1_5l"
                 android:textColor="#002366"
                 android:textFontWeight="600"
                 android:textSize="32sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtThirdBox" />
+                app:layout_constraintTop_toBottomOf="@+id/txtThirdBox"
+                tools:targetApi="p" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#055ca8"
-                android:text="View Campaign"
+                android:text="@string/view_campaign"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/price" />

@@ -11,9 +11,10 @@
         <item name="android:textColor">@color/title_color</item>
         <item name="android:textFontWeight" tools:targetApi="p">500</item>
         <item name="textAllCaps">true</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingStart">5dp</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+
     </style>
 
     <style name="business_summary">
@@ -37,7 +38,7 @@
         <item name="android:layout_margin">4dp</item>
         <item name="android:drawablePadding">3dp</item>
         <item name="android:padding">5dp</item>
-        <item name="drawableStartCompat">@drawable/not_eligible</item>
+        <item name="drawableStartCompat">@drawable/eligible</item>
     </style>
 
     <style name="target_count">
@@ -75,6 +76,11 @@
     <style name="Theme.Practice.NoActionBar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="circleImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="Theme.Practice.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

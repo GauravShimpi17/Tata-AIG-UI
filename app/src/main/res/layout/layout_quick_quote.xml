@@ -30,6 +30,7 @@
         app:layout_constraintStart_toStartOf="@+id/imgQuickQuote"
         app:layout_constraintTop_toBottomOf="@+id/imgQuickQuote"
         android:textAlignment="center"
+        android:layout_marginTop="4dp"
         app:autoSizeMaxTextSize="12sp"
         app:autoSizeMinTextSize="10sp"
         app:autoSizeStepGranularity="2sp"/>

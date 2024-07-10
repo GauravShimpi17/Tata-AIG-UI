@@ -14,7 +14,7 @@
         android:id="@+id/productName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product Name"
+        android:text="@string/product_name"
         android:textColor="@color/sky_blue"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
@@ -26,13 +26,13 @@
         android:id="@+id/copyThreeLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Copy upto three \nlines will come \nhere"
+        android:text="@string/copy_upto_three_nlines_will_come_nhere"
         android:padding="5dp"
         app:layout_constraintTop_toBottomOf="@+id/productName"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/white"
         android:layout_marginStart="5dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textFontWeight="600"
         tools:targetApi="p" />
 
@@ -40,7 +40,7 @@
         android:id="@+id/copySubtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsem upto 2 \nlines"
+        android:text="@string/lorem_ipsem_upto_2_nlines"
         app:layout_constraintTop_toBottomOf="@id/copyThreeLine"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/white"
@@ -50,7 +50,7 @@
         android:id="@+id/posterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/button"
         app:layout_constraintTop_toBottomOf="@id/copySubtext"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
-        app:constraint_referenced_ids="productName, posterButton">
+        app:constraint_referenced_ids="productName">
 
     </androidx.constraintlayout.widget.Barrier>
 

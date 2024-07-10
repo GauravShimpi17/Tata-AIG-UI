@@ -23,17 +23,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            android:text="12"
+            android:text="@string/_12"
             android:textColor="#071e54"
             android:textFontWeight="600"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            tools:targetApi="p" />
         <!--            android:layout_marginBottom="-10dp"-->
 
         <TextView
             android:id="@+id/txt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Renewals"
+            android:text="@string/renewals"
             app:autoSizeMaxTextSize="12sp"
             app:autoSizeMinTextSize="9sp"
             app:autoSizeStepGranularity="2sp"/>
@@ -42,7 +43,7 @@
             android:id="@+id/txt3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="07 Days"
+            android:text="@string/_07_days"
             android:textColor="#e53030"
             app:autoSizeMaxTextSize="12sp"
             app:autoSizeMinTextSize="9sp"

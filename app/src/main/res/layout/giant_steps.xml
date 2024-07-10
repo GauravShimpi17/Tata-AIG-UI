@@ -18,7 +18,7 @@
             style="@style/quarterly"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="FY 24-25"
+            android:text="@string/fy_24_25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--        android:textSize="16sp"-->
@@ -28,7 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="As on 12 Jun'24"
+            android:text="@string/as_on_12_jun_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--        android:textSize="16sp"-->
@@ -71,7 +71,7 @@
                     style="@style/txt_linear_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Target Premium"
+                    android:text="@string/target_premium"
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -80,13 +80,14 @@
                     android:id="@+id/txtTargetPremium"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="₹1.1Cr"
+                    android:text="@string/_1_1cr"
                     android:textColor="#002366"
                     android:textFontWeight="600"
                     android:textSize="34sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/txtTarget"
-                    app:layout_constraintTop_toBottomOf="@id/txtTarget" />
+                    app:layout_constraintTop_toBottomOf="@id/txtTarget"
+                    tools:targetApi="p" />
                 <!--    android:layout_marginStart="16dp"-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -98,7 +99,8 @@
                 app:layout_constraintEnd_toStartOf="@+id/premiumLabel"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txtPremiumLabel"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
                     android:id="@+id/circularProgressIndicator"
@@ -126,7 +128,7 @@
                     style="@style/txt_linear_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Earned Premium"
+                    android:text="@string/earned_premium"
                     android:textColor="#000000"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -136,13 +138,14 @@
                     android:id="@+id/txtearnedPremiumValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹12.5L"
+                    android:text="@string/_12_5l"
                     android:textColor="#4CAF50"
                     android:textFontWeight="600"
                     android:textSize="34sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/txtEarned"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEarned" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtEarned"
+                    tools:targetApi="p" />
                 <!--    android:layout_marginEnd="16dp"-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -166,7 +169,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:text="Not Eligible"
+            android:text="@string/not_eligible"
+            app:drawableStartCompat="@drawable/not_eligible"
             app:layout_constraintBottom_toBottomOf="@+id/dashedLine2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +197,7 @@
                     android:layout_height="wrap_content"
 
                     android:paddingHorizontal="10dp"
-                    android:text="Earned"
+                    android:text="@string/earned"
                     app:layout_constraintEnd_toStartOf="@+id/txtLinearBar2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -205,7 +209,7 @@
                     style="@style/txt_linear_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WTD GWP"
+                    android:text="@string/wtd_gwp"
                     app:layout_constraintEnd_toStartOf="@+id/txtLinearBar3"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/txtLinearBar1"
@@ -217,7 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
-                    android:text="Target"
+                    android:text="@string/target"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/txtLinearBar2"
@@ -246,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:paddingHorizontal="10dp"
-                    android:text="50000"
+                    android:text="@string/_50000"
                     android:textColor="#4CAF50"
                     android:textFontWeight="600"
                     android:textSize="20sp"
@@ -254,14 +258,15 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearProgressBar" />
+                    app:layout_constraintTop_toBottomOf="@+id/linearProgressBar"
+                    tools:targetApi="p" />
 
                 <TextView
                     android:id="@+id/target"
                     style="@style/target_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2Cr"
+                    android:text="@string/_2cr"
                     android:textColor="#002366"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -276,7 +281,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
                 android:paddingTop="15dp"
-                android:text="1.95cr Away From"
+                android:text="@string/_1_95cr_away_from"
                 app:layout_constraintEnd_toStartOf="@+id/txtThirdBoxRight"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -289,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
                 android:paddingTop="15dp"
-                android:text=" Diamond Club"
+                android:text="@string/diamond_club"
                 android:textFontWeight="500"
                 app:layout_constraintEnd_toEndOf="parent"
 
@@ -303,7 +308,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#055ca8"
-                android:text="View Incentive Details"
+                android:text="@string/view_incentive_details"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtThirdBoxLeft" />
