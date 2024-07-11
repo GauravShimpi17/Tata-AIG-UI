@@ -5,335 +5,337 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
-
-    <ScrollView
-        android:id="@+id/scView"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f7f7f7"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <include
+            android:id="@+id/actionbar"
+            layout="@layout/layout_appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f7f7f7"
-            android:paddingBottom="10dp">
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior" />
 
-            <include
-                android:id="@+id/actionbar"
-                layout="@layout/layout_appbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/headlineMain"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/actionbar" />
-
-            <include
-                android:id="@+id/quickAction1"
-                layout="@layout/card_quick_actions"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/quickAction2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/headlineMain"
-                />
-            <!--        android:layout_marginStart="5dp"-->
-
-            <include
-                android:id="@+id/quickAction2"
-                layout="@layout/card_quick_actions"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/quickAction3"
-                app:layout_constraintStart_toEndOf="@+id/quickAction1"
-                app:layout_constraintTop_toBottomOf="@id/headlineMain" />
-
-            <include
-                android:id="@+id/quickAction3"
-                layout="@layout/card_quick_actions"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/quickAction2"
-                app:layout_constraintTop_toBottomOf="@id/headlineMain" />
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/actBarrier"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="quickAction1 ,quickAction2, quickAction3"/>
-
-            <include
-                android:id="@+id/headlineBusinessSummary"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/actBarrier" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardBusinessSummary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintTop_toBottomOf="@+id/headlineBusinessSummary"
-                tools:showIn="@layout/activity_main">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:id="@+id/txtSummaryPeriod"
-                        style="@style/business_summary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="25dp"
-                        android:text="@string/_02may_02aug_24"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <include
-                        android:id="@+id/summaryLeft"
-                        layout="@layout/layout_business_policy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toStartOf="@+id/imgBarView"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintHorizontal_chainStyle="spread_inside"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txtSummaryPeriod" />
-
-                    <ImageView
-                        android:id="@+id/imgBarView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/bar_chart_2"
-                        app:layout_constraintEnd_toStartOf="@id/summaryRight"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/summaryLeft"
-                        app:layout_constraintTop_toTopOf="@id/summaryRight" />
-
-                    <include
-                        android:id="@+id/summaryRight"
-                        layout="@layout/layout_business_policy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/imgBarView"
-                        app:layout_constraintTop_toBottomOf="@id/txtSummaryPeriod" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!--<include
-            android:id="@+id/cardBusinessSummary"
-            layout="@layout/layout_business_summary"
+        <ScrollView
+            android:id="@+id/scView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/headlineMain1" />-->
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:scrollbars="none"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-            <include
-                android:id="@+id/txtQuickQuote"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardBusinessSummary" />
+                android:background="@color/background"
+                android:paddingBottom="10dp">
 
-            <include
-                android:id="@+id/quickQuote1"
-                layout="@layout/layout_quick_quote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/quickQuote2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
 
-            <include
-                android:id="@+id/quickQuote2"
-                layout="@layout/layout_quick_quote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/quickQuote3"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/quickQuote1"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
-
-            <include
-                android:id="@+id/quickQuote3"
-                layout="@layout/layout_quick_quote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/quickQuote4"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/quickQuote2"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
-
-            <include
-                android:id="@+id/quickQuote4"
-                layout="@layout/layout_quick_quote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/quickQuote3"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
-
-            <HorizontalScrollView
-                android:id="@+id/posterScrollView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:scrollbars="none"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/quickQuote1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <include
+                    android:id="@+id/headlineMain"
+                    layout="@layout/layout_headline"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <include
-                        android:id="@+id/poster1"
-                        layout="@layout/poster_image"
+                <include
+                    android:id="@+id/quickAction1"
+                    layout="@layout/card_quick_actions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/quickAction2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/headlineMain" />
+                <!--        android:layout_marginStart="5dp"-->
+
+                <include
+                    android:id="@+id/quickAction2"
+                    layout="@layout/card_quick_actions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/quickAction3"
+                    app:layout_constraintStart_toEndOf="@+id/quickAction1"
+                    app:layout_constraintTop_toBottomOf="@id/headlineMain" />
+
+                <include
+                    android:id="@+id/quickAction3"
+                    layout="@layout/card_quick_actions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/quickAction2"
+                    app:layout_constraintTop_toBottomOf="@id/headlineMain" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/actBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="quickAction1 ,quickAction2, quickAction3" />
+
+                <include
+                    android:id="@+id/headlineBusinessSummary"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/actBarrier" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardBusinessSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toBottomOf="@+id/headlineBusinessSummary">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="17dp">
+
+                        <TextView
+                            android:id="@+id/txtSummaryPeriod"
+                            style="@style/business_summary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="26dp"
+                            android:text="@string/_02may_02aug_24"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <include
+                            android:id="@+id/summaryLeft"
+                            layout="@layout/layout_business_policy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toStartOf="@+id/imgBarView"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txtSummaryPeriod" />
+
+                        <ImageView
+                            android:id="@+id/imgBarView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/bar_chart_2"
+                            android:paddingTop="5dp"
+                            app:layout_constraintEnd_toStartOf="@id/summaryRight"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/summaryLeft"
+                            app:layout_constraintTop_toTopOf="@id/summaryRight" />
+
+                        <include
+                            android:id="@+id/summaryRight"
+                            layout="@layout/layout_business_policy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/imgBarView"
+                            app:layout_constraintTop_toBottomOf="@id/txtSummaryPeriod" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--<include
+                android:id="@+id/cardBusinessSummary"
+                layout="@layout/layout_business_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/headlineMain1" />-->
+
+                <include
+                    android:id="@+id/txtQuickQuote"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardBusinessSummary" />
+
+                <include
+                    android:id="@+id/quickQuote1"
+                    layout="@layout/layout_quick_quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/quickQuote2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
+
+                <include
+                    android:id="@+id/quickQuote2"
+                    layout="@layout/layout_quick_quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/quickQuote3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/quickQuote1"
+                    app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
+
+                <include
+                    android:id="@+id/quickQuote3"
+                    layout="@layout/layout_quick_quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/quickQuote4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/quickQuote2"
+                    app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
+
+                <include
+                    android:id="@+id/quickQuote4"
+                    layout="@layout/layout_quick_quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/quickQuote3"
+                    app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
+
+                <HorizontalScrollView
+                    android:id="@+id/posterScrollView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/quickQuote1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:paddingBottom="5dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:layout_height="wrap_content">
 
-                    <include
-                        android:id="@+id/poster2"
-                        layout="@layout/poster_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/poster1" />
+                        <include
+                            android:id="@+id/poster1"
+                            layout="@layout/poster_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:paddingBottom="5dp"
+                            app:layout_constraintStart_toStartOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </HorizontalScrollView>
+                        <include
+                            android:id="@+id/poster2"
+                            layout="@layout/poster_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/poster1" />
 
-            <include
-                android:id="@+id/giantSteps"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/posterScrollView" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
 
-            <include
-                android:id="@+id/cardGiantSteps"
-                layout="@layout/giant_steps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/giantSteps" />
+                <include
+                    android:id="@+id/giantSteps"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/posterScrollView" />
 
-            <TextView
-                android:id="@+id/txtCampaign"
-                style="@style/headline_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/campaigns"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardGiantSteps" />
+                <include
+                    android:id="@+id/cardGiantSteps"
+                    layout="@layout/giant_steps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/giantSteps" />
 
-            <include
-                android:id="@+id/health"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCampaign" />
+                <TextView
+                    android:id="@+id/txtCampaign"
+                    style="@style/headline_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/campaigns"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardGiantSteps" />
 
-            <include
-                android:id="@+id/cardHealth"
-                layout="@layout/common_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/health" />
+                <include
+                    android:id="@+id/health"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCampaign" />
 
-            <include
-                android:id="@+id/motor"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardHealth" />
+                <include
+                    android:id="@+id/cardHealth"
+                    layout="@layout/common_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/health" />
 
-            <include
-                android:id="@+id/isEligible"
-                layout="@layout/text_eligibility"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/motor" />
+                <include
+                    android:id="@+id/motor"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardHealth" />
 
-            <include
-                android:id="@+id/cardMotor"
-                layout="@layout/common_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/isEligible" />
+                <include
+                    android:id="@+id/isEligible"
+                    layout="@layout/text_eligibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/motor" />
 
-            <include
-                android:id="@+id/travel"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardMotor" />
+                <include
+                    android:id="@+id/cardMotor"
+                    layout="@layout/common_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/isEligible" />
 
-            <include
-                android:id="@+id/cardTravel"
-                layout="@layout/common_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/travel" />
+                <include
+                    android:id="@+id/travel"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardMotor" />
 
-            <include
-                android:id="@+id/commLines"
-                layout="@layout/layout_headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardTravel" />
+                <include
+                    android:id="@+id/cardTravel"
+                    layout="@layout/common_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/travel" />
 
-            <include
-                android:id="@+id/cardCommLines"
-                layout="@layout/common_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/commLines" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                <include
+                    android:id="@+id/commLines"
+                    layout="@layout/layout_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardTravel" />
+
+                <include
+                    android:id="@+id/cardCommLines"
+                    layout="@layout/common_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/commLines" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view_home"

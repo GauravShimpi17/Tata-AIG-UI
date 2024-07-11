@@ -1,6 +1,7 @@
 package com.example.practice
 
 import ExpandableAdapter
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import com.example.practice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
 
+        binding.headlineMain.txtTitle.setCompoundDrawables(null,null,null,null)
+
 //        findViewById<CardView>(R.id.quickAction2).findViewById<TextView>(R.id.quickText1).text = "2"
         binding.quickAction2.apply {
             txt1.text = "02"
@@ -69,8 +73,8 @@ class MainActivity : AppCompatActivity() {
             txtTitle.setCompoundDrawables(null, null, null, null)
         }
         binding.summaryRight.apply {
-            totalPolicies.text = "Total GWP"
-            totalPoliciesCount.text = "₹25.7Cr"
+            totalPolicies.text = getString(R.string.total_gwp)
+            totalPoliciesCount.text = getString(R.string._25_7cr)
         }
 
         binding.quickQuote2.apply {
@@ -90,7 +94,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.giantSteps.txtTitle.text = "Giant Steps"
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val toot =  binding.giantSteps.txtTitle
+            ViewCompat.setTooltipText(toot, "hello world")
+        }
         binding.health.txtTitle.text = "Health"
         binding.cardHealth.apply {
             progressHeadline.text = "Health Quarterly Camapign"
@@ -122,7 +129,6 @@ class MainActivity : AppCompatActivity() {
             txtTarget.text = "Slab Target"
             txtThirdBox.text = "Upcoming Slab Target"
             price.text = "₹25L"
-
         }
 
         expandableListAdapter = ExpandableAdapter(this, getNavMenuList())

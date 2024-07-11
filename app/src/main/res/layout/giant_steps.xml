@@ -55,6 +55,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashedLine">
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/txtPremiumLabel"
                 android:layout_width="wrap_content"
@@ -78,16 +79,15 @@
                 <!--    android:layout_marginStart="16dp"-->
                 <TextView
                     android:id="@+id/txtTargetPremium"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="@string/_1_1cr"
-                    android:textColor="#002366"
-                    android:textFontWeight="600"
-                    android:textSize="34sp"
+                    android:textColor="@color/price"
+                    style="@style/circleEarned"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/txtTarget"
                     app:layout_constraintTop_toBottomOf="@id/txtTarget"
-                    tools:targetApi="p" />
+                    />
                 <!--    android:layout_marginStart="16dp"-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -107,10 +107,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:progress="25"
-                    app:indicatorColor="#4CAF50"
-                    app:indicatorSize="85dp"
-                    app:trackColor="#dadde5"
-                    app:trackThickness="6dp" />
+                    style="@style/circularIndicator" />
             </FrameLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -136,12 +133,11 @@
 
                 <TextView
                     android:id="@+id/txtearnedPremiumValue"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/_12_5l"
                     android:textColor="#4CAF50"
-                    android:textFontWeight="600"
-                    android:textSize="34sp"
+                    style="@style/circleEarned"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/txtEarned"
                     app:layout_constraintTop_toBottomOf="@+id/txtEarned"
@@ -195,7 +191,6 @@
                     style="@style/txt_linear_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:paddingHorizontal="10dp"
                     android:text="@string/earned"
                     app:layout_constraintEnd_toStartOf="@+id/txtLinearBar2"
@@ -231,18 +226,11 @@
                     android:id="@+id/linearProgressBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="20dp"
-                    android:paddingHorizontal="10dp"
                     android:progress="25"
-                    app:indicatorColor="#4CAF50"
-                    app:indicatorTrackGapSize="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txtLinearBar2"
-                    app:trackColor="#dadde5"
-                    app:trackCornerRadius="5dp"
-                    app:trackThickness="7dp" />
+                    style="@style/linearProgressIndicator" />
 
                 <TextView
                     android:id="@+id/earned"
@@ -251,8 +239,8 @@
                     android:layout_marginTop="5dp"
                     android:paddingHorizontal="10dp"
                     android:text="@string/_50000"
-                    android:textColor="#4CAF50"
-                    android:textFontWeight="600"
+                    android:textColor="@color/progress_indicator_color"
+                    android:fontFamily="@font/poppins_medium"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/target"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -267,7 +255,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_2cr"
-                    android:textColor="#002366"
+                    android:textColor="@color/price"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/earned"
@@ -281,6 +269,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
                 android:paddingTop="15dp"
+                android:paddingHorizontal="4dp"
                 android:text="@string/_1_95cr_away_from"
                 app:layout_constraintEnd_toStartOf="@+id/txtThirdBoxRight"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -295,9 +284,8 @@
                 android:drawablePadding="5dp"
                 android:paddingTop="15dp"
                 android:text="@string/diamond_club"
-                android:textFontWeight="500"
+                android:fontFamily="@font/poppins_medium"
                 app:layout_constraintEnd_toEndOf="parent"
-
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txtThirdBoxLeft"
                 app:layout_constraintTop_toBottomOf="@id/linearProgress"
@@ -307,7 +295,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:backgroundTint="#055ca8"
+                android:backgroundTint="@color/button_bg"
                 android:text="@string/view_incentive_details"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

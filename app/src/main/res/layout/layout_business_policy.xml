@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/total_policies"
-        android:textFontWeight="500"
+        style="@style/default_small_text"
         android:includeFontPadding="false"
         android:textColor="@color/dark_blue_color"
         app:layout_constraintTop_toTopOf="parent"

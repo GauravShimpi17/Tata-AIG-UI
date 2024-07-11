@@ -10,4 +10,10 @@
     <color name="nav_initial_background_color">#6482ce</color>
     <color name="default_background_color">#f7f7f7</color>
     <color name="text_default_color">#323338</color>
+    <color name="button_bg">#055ca8</color>
+    <color name="progress_indicator_color">#4CAF50</color>
+    <color name="track_color">#dadde5</color>
+    <color name="price">#002366</color>
+    <color name="red">#e53030</color>
+    <color name="background">#f7f7f7</color>
 </resources>

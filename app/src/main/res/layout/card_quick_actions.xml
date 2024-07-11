@@ -24,10 +24,9 @@
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
             android:text="@string/_12"
-            android:textColor="#071e54"
-            android:textFontWeight="600"
-            android:textSize="40sp"
-            tools:targetApi="p" />
+            android:textColor="@color/dark_blue_color"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="40sp" />
         <!--            android:layout_marginBottom="-10dp"-->
 
         <TextView
@@ -35,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/renewals"
+            style="@style/default_small_text"
             app:autoSizeMaxTextSize="12sp"
             app:autoSizeMinTextSize="9sp"
             app:autoSizeStepGranularity="2sp"/>
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_07_days"
-            android:textColor="#e53030"
+            android:textColor="@color/red"
             app:autoSizeMaxTextSize="12sp"
             app:autoSizeMinTextSize="9sp"
             app:autoSizeStepGranularity="2sp"/>

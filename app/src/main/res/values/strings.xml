@@ -50,7 +50,7 @@
     <string name="_1_1cr">₹1.1Cr</string>
     <string name="earned_premium">Earned Premium</string>
     <string name="_12_5l">₹12.5L</string>
-    <string name="not_eligible">Not Eligible</string>
+    <string name="not_eligible">Not Eligible </string>
     <string name="earned">Earned</string>
     <string name="wtd_gwp">WTD GWP</string>
     <string name="target">Target</string>
@@ -64,4 +64,6 @@
     <string name="_3456">3456</string>
     <string name="you_are">You are</string>
     <string name="for_2_4_campaigns">for 2/4 campaigns</string>
+    <string name="_25_7cr">₹25.7Cr</string>
+    <string name="total_gwp">Total GWP</string>
 </resources>
