@@ -11,22 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="16dp">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp"/>
-
-        <!-- Guideline 16dp from the end -->
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp"/>
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/txtYear"
@@ -34,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/fy_24_25"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--        android:textSize="16sp"-->
 
@@ -46,7 +31,7 @@
             android:textSize="12sp"
             android:layout_marginStart="8dp"
             android:text="@string/as_on_12_jun_24"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <!--        android:textSize="16sp"-->
 
@@ -64,12 +49,12 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/middlePart"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="14dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashedLine">
 
 
@@ -190,12 +175,12 @@
             app:layout_constraintTop_toBottomOf="@+id/dashedLine2" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="35dp"
             android:paddingBottom="10dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashedLine2">
 
             <androidx.constraintlayout.widget.ConstraintLayout

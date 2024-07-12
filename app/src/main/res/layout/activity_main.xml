@@ -248,7 +248,7 @@
 
                 <include
                     android:id="@+id/cardGiantSteps"
-                    layout="@layout/giant_steps"
+                    layout="@layout/giant_steps2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +272,7 @@
 
                 <include
                     android:id="@+id/cardHealth"
-                    layout="@layout/common_progress"
+                    layout="@layout/common_progress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -295,7 +295,7 @@
 
                 <include
                     android:id="@+id/cardMotor"
-                    layout="@layout/common_progress"
+                    layout="@layout/common_progress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -311,7 +311,7 @@
 
                 <include
                     android:id="@+id/cardTravel"
-                    layout="@layout/common_progress"
+                    layout="@layout/common_progress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
@@ -327,7 +327,7 @@
 
                 <include
                     android:id="@+id/cardCommLines"
-                    layout="@layout/common_progress"
+                    layout="@layout/common_progress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"

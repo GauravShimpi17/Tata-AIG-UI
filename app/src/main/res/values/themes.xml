@@ -71,7 +71,7 @@
     </style>
 
     <style name="quarterly">
-        <item name="android:layout_marginStart">8dp</item>
+<!--        <item name="android:layout_marginStart">8dp</item>-->
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/text_default_color</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
