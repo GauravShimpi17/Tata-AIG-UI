@@ -1,7 +1,9 @@
 package com.example.practice
 
 import ExpandableAdapter
+import android.content.res.Resources
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -10,6 +12,9 @@ import android.widget.PopupWindow
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.example.practice.databinding.ActivityMainBinding
 import com.example.practice.databinding.Tooltip1Binding
 
@@ -17,6 +22,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private lateinit var expandableListAdapter : ExpandableAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var imgRecyclerAdapter: ImgRecyclerAdapter
+    private lateinit var dataList: MutableList<String>
+    private lateinit var motorRV: RecyclerView
+    private lateinit var motorAdapter: MotorAdapter
+    private lateinit var motorData: MutableList<String>
 
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -49,8 +60,8 @@ class MainActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
 
-        binding.headlineMain.txtTitle.setCompoundDrawables(null,null,null,null)
-
+//        binding.headlineMain.txtTitle.setCompoundDrawables(null,null,null,null)
+        binding.headlineMain.infoIcon.visibility = View.GONE
 //        findViewById<CardView>(R.id.quickAction2).findViewById<TextView>(R.id.quickText1).text = "2"
         binding.quickAction2.apply {
             txt1.text = "02"
@@ -66,12 +77,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.headlineBusinessSummary.apply {
             txtTitle.text = "Business Summary"
-            txtTitle.setCompoundDrawables(null, null, null, null)
+//            txtTitle.setCompoundDrawables(null, null, null, null)
+            infoIcon.visibility = View.GONE
         }
 
         binding.txtQuickQuote.apply {
             txtTitle.text = "Quick Quote"
-            txtTitle.setCompoundDrawables(null, null, null, null)
+//            txtTitle.setCompoundDrawables(null, null, null, null)
+            infoIcon.visibility = View.GONE
         }
         binding.summaryRight.apply {
             totalPolicies.text = getString(R.string.total_gwp)
@@ -95,14 +108,52 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.giantSteps.txtTitle.text = "Giant Steps"
-        binding.giantSteps.txtTitle.setOnClickListener {
-            val layout = Tooltip1Binding.inflate(layoutInflater).root
+        binding.giantSteps.infoIcon.setOnClickListener {
+            val binding = Tooltip1Binding.inflate(layoutInflater)
+            val layout = binding.root
             val window = PopupWindow(it,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT)
             window.isFocusable = true
             window.isOutsideTouchable = true
             window.contentView = layout
-            window.showAsDropDown(it)
+//            window.showAsDropDown(it,-55,-350, Gravity.START)
             window.setBackgroundDrawable(null)
+
+            val screenHeight = Resources.getSystem().displayMetrics.heightPixels
+
+            // Measure the layout to get its dimensions
+            layout.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+            val tooltipHeight = layout.measuredHeight
+
+            // Get the location of the anchor view on screen
+            val anchorLocation = IntArray(2)
+            it.getLocationOnScreen(anchorLocation)
+            val anchorX = anchorLocation[0]
+            val anchorY = anchorLocation[1]
+
+            // Calculate space below and above the anchor view
+            val spaceBelow = screenHeight - anchorY - it.height
+            val spaceAbove = anchorY
+
+            // Decide where to position the tooltip
+            val xOffset = -55
+            val yOffset: Int
+
+            if (spaceBelow >= tooltipHeight) {
+                // Show below the anchor view
+                yOffset = 0
+                window.showAsDropDown(it, xOffset, yOffset)
+                binding.angleBottom.visibility = View.GONE
+            } else if (spaceAbove >= tooltipHeight) {
+                // Show above the anchor view
+                yOffset = -it.height - tooltipHeight
+                window.showAsDropDown(it, xOffset, yOffset)
+                binding.angleTop.visibility = View.GONE
+            } else {
+                // Default behavior: show below the anchor view
+                yOffset = 0
+                window.showAsDropDown(it, xOffset, yOffset)
+            }
+
         }
 
 //        val pointsAwayFrm = getString(R.string.diamondStart)
@@ -114,7 +165,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.txtCampaigns.apply{
             txtTitle.text = "Campaigns"
-            txtTitle.setCompoundDrawables(null, null, null, null)
+//            txtTitle.setCompoundDrawables(null, null, null, null)
+            infoIcon.visibility = View.GONE
         }
 
         binding.health.txtTitle.text = "Health"
@@ -125,15 +177,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val drawable = ContextCompat.getDrawable(this, R.drawable.not_eligible)
         binding.motor.txtTitle.text = "Motor"
+        /*val drawable = ContextCompat.getDrawable(this, R.drawable.not_eligible)
         binding.cardMotor.apply {
             progressHeadline.text = "Motor Quarterly Camapign"
             centerImage.setImageResource(R.drawable.motor2)
             clubGold.visibility = View.GONE
             notEligible.text = "Not Eligible"
             notEligible.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-        }
+        }*/
 
         binding.travel.txtTitle.text = "Travel"
         binding.cardTravel.apply {
@@ -153,6 +205,45 @@ class MainActivity : AppCompatActivity() {
         expandableListAdapter = ExpandableAdapter(this, getNavMenuList())
         binding.expandableListView.setAdapter(expandableListAdapter)
 
+        recyclerView = findViewById(R.id.img_recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        dataList = mutableListOf()
+        for (i in 0 until 3) {
+            dataList.add("add")
+        }
+        imgRecyclerAdapter = ImgRecyclerAdapter(dataList)
+        recyclerView.adapter = imgRecyclerAdapter
+        PagerSnapHelper().attachToRecyclerView(recyclerView)
+
+//        motor recycler
+        motorRV = binding.motorRecycler
+
+        motorData = mutableListOf()
+        for (i in 0 until 4) {
+            motorData.add("add")
+        }
+
+        motorAdapter = MotorAdapter(motorData)
+        motorRV.adapter = motorAdapter
+        motorRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        motorRV.isNestedScrollingEnabled = false
+        motorRV.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        motorRV.setHasFixedSize(true)
+        val radius = 10
+        val dotsHeight = radius*3
+        val color = ContextCompat.getColor(this, R.color.dark_blue_color)
+        val inactiveColor = ContextCompat.getColor(this, R.color.dash_line)
+        motorRV.addItemDecoration(
+            DotIndicator(
+                radius,
+                radius * 4,
+                dotsHeight,
+                inactiveColor,
+                color
+            )
+        )
+        PagerSnapHelper().attachToRecyclerView(motorRV)
     }
 
 

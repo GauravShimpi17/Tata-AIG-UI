@@ -202,7 +202,7 @@
                     app:layout_constraintStart_toEndOf="@+id/quickQuote3"
                     app:layout_constraintTop_toBottomOf="@+id/txtQuickQuote" />
 
-                <HorizontalScrollView
+                <!--<HorizontalScrollView
                     android:id="@+id/posterScrollView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -236,7 +236,16 @@
                             app:layout_constraintStart_toEndOf="@+id/poster1" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </HorizontalScrollView>
+                </HorizontalScrollView>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/img_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/quickQuote1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:overScrollMode="never"/>
 
                 <include
                     android:id="@+id/giantSteps"
@@ -244,7 +253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/posterScrollView" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_recycler_view" />
 
                 <include
                     android:id="@+id/cardGiantSteps"
@@ -293,13 +302,23 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/motor" />
 
-                <include
+               <!-- <include
                     android:id="@+id/cardMotor"
                     layout="@layout/common_progress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/isEligible" />
+                    app:layout_constraintTop_toBottomOf="@+id/isEligible" />-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/motor_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/isEligible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:scrollbars="none"
+                    />
+
 
                 <include
                     android:id="@+id/travel"
@@ -307,7 +326,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardMotor" />
+                    app:layout_constraintTop_toBottomOf="@+id/motor_recycler" />
 
                 <include
                     android:id="@+id/cardTravel"

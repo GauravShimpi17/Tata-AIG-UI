@@ -16,4 +16,5 @@
     <color name="price">#002366</color>
     <color name="red">#e53030</color>
     <color name="background">#f7f7f7</color>
+    <color name="dash_line">#C8C6C6</color>
 </resources>

@@ -11,13 +11,23 @@
         android:layout_height="wrap_content"
         android:text="@string/quick_actions"
         android:drawablePadding="5dp"
-        app:drawableEndCompat="@drawable/info"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:includeFontPadding="false"
         app:flow_horizontalGap="5dp"
         style="@style/headline_style"
         />
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="@id/txtTitle"
+        app:layout_constraintStart_toEndOf="@id/txtTitle"
+        app:layout_constraintTop_toTopOf="@id/txtTitle"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="2dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

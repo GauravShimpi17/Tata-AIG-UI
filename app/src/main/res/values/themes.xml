@@ -2,79 +2,15 @@
 
     <!-- Base application theme. -->
     <style name="Base.Theme.Practice" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@android:color/white</item>
         <item name="android:fontFamily">@font/font_res</item>
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:windowBackground">@color/background</item>
     </style>
 
-    <style name="headline_style">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/title_color</item>
-        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="textAllCaps">true</item>
-        <item name="android:paddingTop">8dp</item>
-        <!--        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>-->
-        <!--        <item name="android:layout_marginTop">15dp</item>-->
-        <item name="android:layout_margin">15dp</item>
-    </style>
-
-    <style name="headline_style_campaign">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/dark_blue_color</item>
-        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
-        <item name="android:fontFamily">@font/poppins_semibold</item>
-        <item name="textAllCaps">true</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
-        <item name="android:layout_margin">5dp</item>
-    </style>
-
-    <style name="business_summary">
-        <item name="android:textColor">@color/dark_blue_color</item>
-        <!--        <item name="android:textFontWeight" tools:targetApi="p">600</item>-->
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="business_count">
-        <item name="android:textColor">@color/dark_blue_color</item>
-        <item name="android:textSize">25sp</item>
-        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
-    <style name="txt_linear_progress">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">12sp</item>
-        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
-    <style name="eligibility">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:layout_margin">4dp</item>
-        <item name="android:drawablePadding">3dp</item>
-        <item name="android:padding">5dp</item>
-        <item name="drawableStartCompat">@drawable/eligible</item>
-    </style>
-
-    <style name="target_count">
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
-        <item name="android:textSize">20sp</item>
-<!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
-    <style name="quarterly">
-<!--        <item name="android:layout_marginStart">8dp</item>-->
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/text_default_color</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
+    <style name="Theme.Practice.NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <!-- Theme for the entire application -->
@@ -93,13 +29,71 @@
     <style name="Theme.Practice.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Style for the action bar -->
-    <style name="CustomActionBar" parent="Widget.AppCompat.ActionBar">
+ <!--   <style name="CustomActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@android:color/transparent</item>
+    </style>-->
+
+    <style name="headline_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:layout_margin">15dp</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <!--        <item name="android:paddingTop">8dp</item>-->
+        <!--        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>-->
+        <!--        <item name="android:layout_marginTop">15dp</item>-->
     </style>
 
-    <style name="Theme.Practice.NoActionBar.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="headline_style_campaign">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_blue_color</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="default_small_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="business_count">
+        <item name="android:textColor">@color/dark_blue_color</item>
+        <item name="android:textSize">25sp</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="business_summary" parent="default_small_text">
+        <item name="android:textColor">@color/dark_blue_color</item>
+    </style>
+
+    <style name="txt_linear_progress" parent="default_small_text">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="eligibility" parent="default_small_text">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="drawableStartCompat">@drawable/eligible</item>
+    </style>
+
+    <style name="target_count">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="quarterly" parent="default_small_text">
+        <item name="android:textColor">@color/text_default_color</item>
     </style>
 
     <style name="circleImageView">
@@ -119,10 +113,6 @@
         <item name="android:paddingHorizontal" tools:targetApi="o">2dp</item>
     </style>
 
-    <style name="default_small_text">
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
 
     <style name="progressHeadline">
         <item name="android:paddingHorizontal" tools:targetApi="o">20dp</item>
