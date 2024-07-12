@@ -1,16 +1,17 @@
 package com.example.practice
 
 import ExpandableAdapter
-import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowManager.LayoutParams
+import android.widget.PopupWindow
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import com.example.practice.databinding.ActivityMainBinding
+import com.example.practice.databinding.Tooltip1Binding
 
 class MainActivity : AppCompatActivity() {
 
@@ -94,10 +95,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.giantSteps.txtTitle.text = "Giant Steps"
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val toot =  binding.giantSteps.txtTitle
-            ViewCompat.setTooltipText(toot, "hello world")
+        binding.giantSteps.txtTitle.setOnClickListener {
+            val layout = Tooltip1Binding.inflate(layoutInflater).root
+            val window = PopupWindow(it,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT)
+            window.isFocusable = true
+            window.isOutsideTouchable = true
+            window.contentView = layout
+            window.showAsDropDown(it)
+            window.setBackgroundDrawable(null)
         }
+
+//        val pointsAwayFrm = getString(R.string.diamondStart)
+//        val club = getString(R.string.diamond_club)
+//        val spannable = SpannableString("$pointsAwayFrm $club")
+//
+//        val start = spannable.indexOf(club)
+//        val end = start - spannable.length
+
+        binding.txtCampaigns.apply{
+            txtTitle.text = "Campaigns"
+            txtTitle.setCompoundDrawables(null, null, null, null)
+        }
+
         binding.health.txtTitle.text = "Health"
         binding.cardHealth.apply {
             progressHeadline.text = "Health Quarterly Camapign"
@@ -136,6 +155,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true
@@ -147,4 +168,5 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.nav_menu, menu)
         return true
     }
+
 }

@@ -2,41 +2,60 @@
 
     <!-- Base application theme. -->
     <style name="Base.Theme.Practice" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
         <item name="android:fontFamily">@font/font_res</item>
+        <item name="android:statusBarColor">@color/black</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="headline_style">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/title_color</item>
-<!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="textAllCaps">true</item>
         <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingHorizontal" tools:targetApi="o">12dp</item>
+        <!--        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>-->
+        <!--        <item name="android:layout_marginTop">15dp</item>-->
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="headline_style_campaign">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_blue_color</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
         <item name="android:layout_margin">5dp</item>
     </style>
 
     <style name="business_summary">
         <item name="android:textColor">@color/dark_blue_color</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">600</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">12sp</item>
     </style>
 
     <style name="business_count">
         <item name="android:textColor">@color/dark_blue_color</item>
         <item name="android:textSize">25sp</item>
-<!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="txt_linear_progress">
         <item name="android:gravity">center</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="eligibility">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:drawablePadding">3dp</item>
         <item name="android:padding">5dp</item>
@@ -47,12 +66,15 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:paddingHorizontal" tools:targetApi="o">10dp</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+<!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="quarterly">
         <item name="android:layout_marginStart">8dp</item>
-        <item name="android:textFontWeight" tools:targetApi="p">600</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_default_color</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
     <!-- Theme for the entire application -->
@@ -86,9 +108,15 @@
     </style>
 
     <style name="circleEarned">
-        <item name="android:fontFamily" >@font/poppins_medium</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">32sp</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="diamond_club" parent="default_small_text">
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">2dp</item>
     </style>
 
     <style name="default_small_text">
@@ -103,7 +131,7 @@
         <item name="android:textColor">@color/dark_blue_color</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:gravity">center</item>
-<!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
+        <!--        <item name="android:textFontWeight" tools:targetApi="p">500</item>-->
     </style>
 
     <style name="linearProgressIndicator">
@@ -114,7 +142,7 @@
         <item name="indicatorTrackGapSize">0dp</item>
         <item name="trackColor">@color/track_color</item>
         <item name="trackCornerRadius">5dp</item>
-        <item name="trackThickness">7dp</item>
+        <item name="trackThickness">8dp</item>
     </style>
 
     <style name="circularIndicator">

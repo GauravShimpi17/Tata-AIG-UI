@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="15dp"
-    app:cardElevation="10dp"
+    app:cardElevation="7dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +27,8 @@
             android:id="@+id/txtTillDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_default_color"
+            android:textSize="12sp"
             android:layout_marginStart="8dp"
             android:text="@string/as_on_12_jun_24"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/target_premium"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <!--    android:layout_marginStart="16dp"-->
@@ -126,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/earned_premium"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <!--    android:layout_marginEnd="16dp"-->
@@ -176,6 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="35dp"
+            android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashedLine2">
@@ -267,15 +270,13 @@
                 android:id="@+id/txtThirdBoxLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawablePadding="5dp"
-                android:paddingTop="15dp"
-                android:paddingHorizontal="4dp"
-                android:text="@string/_1_95cr_away_from"
+                android:text="@string/diamondStart"
                 app:layout_constraintEnd_toStartOf="@+id/txtThirdBoxRight"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linearProgress" />
+                app:layout_constraintTop_toBottomOf="@id/linearProgress"
+                style="@style/diamond_club"/>
 
             <TextView
                 android:id="@+id/txtThirdBoxRight"
@@ -284,17 +285,17 @@
                 android:drawablePadding="5dp"
                 android:paddingTop="15dp"
                 android:text="@string/diamond_club"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txtThirdBoxLeft"
                 app:layout_constraintTop_toBottomOf="@id/linearProgress"
-                tools:targetApi="p" />
+                style="@style/diamond_club"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/button_bg"
                 android:text="@string/view_incentive_details"
                 app:layout_constraintEnd_toEndOf="parent"

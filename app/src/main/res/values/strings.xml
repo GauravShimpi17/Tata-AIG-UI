@@ -52,11 +52,11 @@
     <string name="_12_5l">₹12.5L</string>
     <string name="not_eligible">Not Eligible </string>
     <string name="earned">Earned</string>
-    <string name="wtd_gwp">WTD GWP</string>
+    <string name="wtd_gwp">WTD. GWP</string>
     <string name="target">Target</string>
     <string name="_50000">50000</string>
     <string name="_2cr">2Cr</string>
-    <string name="_1_95cr_away_from">1.95cr Away From</string>
+    <string name="diamondStart">1.95cr Away From</string>
     <string name="diamond_club">Diamond Club</string>
     <string name="view_incentive_details">View Incentive Details</string>
     <string name="bs">BS</string>

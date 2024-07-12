@@ -15,8 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:includeFontPadding="false"
-        app:flow_horizontalGap="5dp"
-        style="@style/headline_style"
+        style="@style/headline_style_campaign"
         />
 
 
