@@ -286,14 +286,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/diamondStart"
-                app:layout_constraintEnd_toStartOf="@+id/txtThirdBoxRight"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/linearProgress"
                 style="@style/diamond_club"/>
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/txtThirdBoxRight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -305,7 +305,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txtThirdBoxLeft"
                 app:layout_constraintTop_toBottomOf="@id/linearProgress"
-                style="@style/diamond_club"/>
+                style="@style/diamond_club"/>-->
 
             <Button
                 android:layout_width="wrap_content"

@@ -2,7 +2,11 @@ package com.example.practice
 
 import ExpandableAdapter
 import android.content.res.Resources
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -65,8 +69,12 @@ class MainActivity : AppCompatActivity() {
           }
       }*/
 
-
-//        motor recycler
+    val spannable = SpannableString(ContextCompat.getString(this, R.string.diamondStart))
+        val dClub =  "Diamond Club"
+        val start = spannable.indexOf(dClub)
+        val end = start + dClub.length
+        spannable.setSpan(StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        binding.cardGiantSteps.txtThirdBoxLeft.text = spannable
 
     }
 
@@ -215,21 +223,20 @@ class MainActivity : AppCompatActivity() {
 
             val screenHeight = Resources.getSystem().displayMetrics.heightPixels
 
-            // Measure the layout to get its dimensions
+
             layout.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
             val tooltipHeight = layout.measuredHeight
 
-            // Get the location of the anchor view on screen
+
             val anchorLocation = IntArray(2)
             it.getLocationOnScreen(anchorLocation)
             val anchorX = anchorLocation[0]
             val anchorY = anchorLocation[1]
 
-            // Calculate space below and above the anchor view
+
             val spaceBelow = screenHeight - anchorY - it.height
             val spaceAbove = anchorY
 
-            // Decide where to position the tooltip
             val xOffset = -55
             val yOffset: Int
 
