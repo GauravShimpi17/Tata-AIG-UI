@@ -21,7 +21,6 @@ class DotIndicator(
     private val indicatorHeight: Int
     private val indicatorItemPadding: Int
     private val radius: Int
-
     private val inactivePaint = Paint()
     private val activePaint = Paint()
 

@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import com.example.practice.NavigationMenuGroup
 import com.example.practice.R
 import com.example.practice.databinding.ChildBindinngBinding
-import com.example.practice.databinding.ParentBinding
+import com.example.practice.databinding.ParentMenuBinding
 
 
 class ExpandableAdapter(
@@ -47,9 +47,9 @@ class ExpandableAdapter(
         parent: ViewGroup?
     ): View {
         val binding = if (convertView == null) {
-            ParentBinding.inflate(LayoutInflater.from(context), parent, false)
+            ParentMenuBinding.inflate(LayoutInflater.from(context), parent, false)
         } else {
-            ParentBinding.bind(convertView)
+            ParentMenuBinding.bind(convertView)
         }
 
         val indicator = if (list[groupPosition].items.isEmpty()) {

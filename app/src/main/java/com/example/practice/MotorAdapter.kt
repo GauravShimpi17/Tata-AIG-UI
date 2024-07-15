@@ -18,7 +18,7 @@ class MotorAdapter(private val motorData: List<String>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val drawable = ContextCompat.getDrawable(holder.itemView.context, R.drawable.not_eligible)
         holder.bind.apply {
-            progressHeadline.text = "Motor Quarterly Camapign"
+            progressHeadline.text = "Motor Quarterly Campaign"
             centerImage.setImageResource(R.drawable.motor2)
             clubGold.visibility = View.GONE
             notEligible.text = "Not Eligible"
@@ -34,3 +34,4 @@ class MotorAdapter(private val motorData: List<String>) :
         val bind = CommonProgress2Binding.bind(itemView)
     }
 }
+

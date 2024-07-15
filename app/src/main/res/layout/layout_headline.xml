@@ -16,6 +16,7 @@
         android:includeFontPadding="false"
         app:flow_horizontalGap="5dp"
         style="@style/headline_style"
+        android:letterSpacing="0.1"
         />
     <ImageView
         android:id="@+id/infoIcon"
