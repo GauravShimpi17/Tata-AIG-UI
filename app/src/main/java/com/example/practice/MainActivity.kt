@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity() {
     private fun giantStepsData() {
         binding.giantSteps.txtTitle.text = "Giant Steps"
 
-//        set Tooltip is info icon
+
         binding.giantSteps.infoIcon.setOnClickListener {
             val binding = Tooltip1Binding.inflate(layoutInflater)
             val layout = binding.root
@@ -241,19 +241,13 @@ class MainActivity : AppCompatActivity() {
             val yOffset: Int
 
             if (spaceBelow >= tooltipHeight) {
-                // Show below the anchor view
                 yOffset = 0
                 window.showAsDropDown(it, xOffset, yOffset)
                 binding.angleBottom.visibility = View.GONE
             } else if (spaceAbove >= tooltipHeight) {
-                // Show above the anchor view
                 yOffset = -it.height - tooltipHeight
                 window.showAsDropDown(it, xOffset, yOffset)
                 binding.angleTop.visibility = View.GONE
-            } else {
-                // Default behavior: show below the anchor view
-                yOffset = 0
-                window.showAsDropDown(it, xOffset, yOffset)
             }
         }
     }
